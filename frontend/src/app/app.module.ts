@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { NumericDirective } from "./numeric.directive";
 
 
 
@@ -35,7 +36,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
     LoginComponent,
     SignupComponent,
     CreateTaskComponent,
-    ListTaskComponent
+    ListTaskComponent,
+    NumericDirective
   ],
   imports: [
     BrowserModule,

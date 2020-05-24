@@ -1,1 +1,19 @@
-<p>create-task works!</p>
+<div class="form">
+    <mat-card class="card">
+       <mat-card-title>Solicitud de prestamo</mat-card-title>
+           <mat-card-content>
+               <div class="container">
+                   <mat-form-field>
+                       <input [(ngModel)]="createTask.Valor" matInput placeholder="Valor a solicitar" numeric type="text">
+                       
+                   </mat-form-field>
+                   
+               </div>
+           </mat-card-content>
+           <mat-card-actions>
+               <button (click)="create()" class="button" mat-raised-button color="primary">Solicitar</button>
+           </mat-card-actions>
+   
+    </mat-card>
+       
+   </div>
