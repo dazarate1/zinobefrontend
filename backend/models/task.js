@@ -6,7 +6,7 @@ const taskSchema =new mongoose.Schema({
     userId:String,
     value:String,
     status:String,
-    date:{type=date, default:date.now}
+    date: {type:Date, default: Date.now}
 
 })
 
