@@ -1,23 +1,15 @@
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
 
-const userSchema =new mongoose.Schema({
+const taskSchema =new mongoose.Schema({
 
-    name:{
-        type:String
-    },
-    email:{
-        type:String
-    },
-    schedule:{
-        type:Number
-    },
-    password:{
-        type:String
-    },
-    date:{
-        type:Date,
-        default:Date.now
+    userId:String,
+    value:String,
+    status:String,
+    date:{type=date, default:date.now}
 
-    }
 })
+
+const Task = mongoose.model('task',taskSchema)
+
+module.exports = Task
