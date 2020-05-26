@@ -4,35 +4,32 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ValueMinMaxComponent } from './value-min-max/value-min-max.component';
-import { CapitalBancoComponent } from './capital-banco/capital-banco.component';
-import { CreateUserComponent } from './task/create-user/create-user.component';
-import { RejactedRequestComponent } from './task/rejacted-request/rejacted-request.component';
-import { AprovedRequestComponent } from './task/aproved-request/aproved-request.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CreateTaskComponent } from './task/create-task/create-task.component';
 import { ListTaskComponent } from './task/list-task/list-task.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatButtonModule} from '@angular/material/button'
+import {MatExpansionModule} from '@angular/material/expansion'
+import {MatIconModule} from '@angular/material/icon'
+import {MatSnackBarModule} from '@angular/material/snack-bar'
+
+import {MatInputModule} from '@angular/material/input'
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatCardModule} from '@angular/material/card'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { NumericDirective } from "./numeric.directive";
 
+import { AuthService } from './service/auth.service'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ValueMinMaxComponent,
-    CapitalBancoComponent,
-    CreateUserComponent,
-    RejactedRequestComponent,
-    AprovedRequestComponent,
     LoginComponent,
     SignupComponent,
     CreateTaskComponent,
@@ -43,15 +40,19 @@ import { NumericDirective } from "./numeric.directive";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
+    MatToolbarModule, 
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
