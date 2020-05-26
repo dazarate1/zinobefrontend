@@ -25,22 +25,24 @@ router.post('/',auth,async(req,res)=>{
 
     const result = await task.save()
     res.status(201).send(result)
-
+})
     router.put('/', auth, async(req, res)=>{
-        const user= await User.findById(req.user._id)
-        if(!user) return res.status(400).send('Usuario no registrado')
-        const task=await Task.findByIdAndUpdate(req.body._id,{
+        const user = await User.findById(req.user._id)
+        if(!user) return res.status(400).send('No hay usuario')
+        const task = await Task.findByIdAndUpdate(req.body._id,{
             userId: user._id,
-            status:req.body.status
+            status: req.body.status,
         },
         {
-            new:true
+            new: true
         })
-        if (!task){
-            return res.status(404).send('solicitud no existente')
+        if(!task){
+            return res.status(404).send('no hay tarea')
         }
+        console.log(task)
+    
         res.status(204).send(task)
     })
-})
+
 
 module.exports = router
